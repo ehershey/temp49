@@ -126,7 +126,7 @@ func runShortcuts(runtype, input, output string) (string, error) {
 		fmt.Printf("args: %v\n", args)
 		fmt.Printf("len(args): %v\n", len(args))
 	}
-	cmd := exec.Command("/opt/homebrew/bin/shortcuts", args...)
+	cmd := exec.Command("/Users/ernie/bin/shortcuts", args...)
 	stdoutStderr, err := cmd.CombinedOutput()
 	if debug {
 		log.Printf("cmd: %s\n", cmd)
