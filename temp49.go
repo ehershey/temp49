@@ -69,7 +69,7 @@ func main() {
 			}
 			// log.Printf("output: %v\n", output)
 			// cheap pattern check
-			if input > "0000-00-00" && input < "9999-99-99" && input != today_formatted {
+			if (input == "dth" || input == "Dth" || (input > "0000-00-00" && input < "9999-99-99")) && input != today_formatted {
 				deletedShortcutCount += 1
 				log.Printf("Deleting shortcuts: %v\n", line)
 				if _, err := deleteShortcut(input); err != nil {
