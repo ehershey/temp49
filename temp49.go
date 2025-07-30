@@ -13,7 +13,7 @@ import (
 	"flag"
 )
 
-var debug = false
+var debug = true
 
 func main() {
 	debugFlag := flag.Bool("debug", false, "Display debugging messages")
@@ -63,13 +63,13 @@ func main() {
 		}
 		if len(tokens) == 5 {
 			input := tokens[1]
-			// output := tokens[3]
+			output := tokens[3]
 			if debug {
 				log.Printf("input: %v\n", input)
 			}
 			// log.Printf("output: %v\n", output)
 			// cheap pattern check
-			if (input == "dth" || input == "Dth" || (input > "0000-00-00" && input < "9999-99-99")) && input != today_formatted {
+			if (input == "dth" || input == "Dth" || (input > "0000-00-00" && input < "9999-99-99")) && input != today_formatted && output != today_formatted {
 				deletedShortcutCount += 1
 				log.Printf("Deleting shortcuts: %v\n", line)
 				if _, err := deleteShortcut(input); err != nil {
